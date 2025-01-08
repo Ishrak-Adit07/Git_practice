@@ -12,4 +12,14 @@ const testGetApi = async (req, res) => {
   }
 };
 
-export { testGetApi };
+const blueApi = async (req, res) => {
+
+    try { 
+      return res.status(201).send({ success: "This is a blue test" });
+    } catch (e) {
+      console.error(e);
+      return res.status(500).send({ error: e.message });
+    }
+  };
+
+export { testGetApi, blueApi };
